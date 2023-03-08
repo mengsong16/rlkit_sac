@@ -15,6 +15,7 @@ random_goal: false
 start_location: [1.5,0.5]
 goal_location: [7.5,15.5] 
 terminate_on_timeout: true
+action_noise: 0 # no action noise
 normalize_observation: false
 threshold_distance: 0.5
 max_episode_steps: 100
