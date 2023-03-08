@@ -1,0 +1,10 @@
+ssac.egg-info
+.DS_Store
+.history
+.vscode
+data
+wandb
+runs
+plots
+tensorboard
+evaluation

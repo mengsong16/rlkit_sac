@@ -1,0 +1,77 @@
+# experiment name
+algorithm: "SAC"
+version: "normal"
+experiment_prefix: "hallway" 
+
+# environment
+train_environment_name: "Hallway"
+test_environment_name: "Hallway"
+resize_factor: 1
+continuous_action: true
+discretize_method: "grid"
+num_substeps: 2
+random_start: false
+random_goal: false
+start_location: [1.5,0.5]
+goal_location: [1.5,8.5]
+terminate_on_timeout: true
+normalize_observation: false
+threshold_distance: 0.5
+max_episode_steps: 100
+
+# seed and device
+gpu_id: 1
+seed: 1
+
+# neural network
+layer_size: 256
+
+# replay buffer
+replay_buffer_size: 1000000
+
+# training
+algorithm_kwargs:
+  num_epochs: 1000
+  num_eval_steps_per_epoch: 1000
+  num_trains_per_train_loop: 100
+  num_expl_steps_per_train_loop: 100
+  min_num_steps_before_training: 1000
+  max_path_length: 100
+  batch_size: 256
+
+# save checkpoint
+save_every_epochs: 50 
+
+# SAC
+trainer_kwargs:
+  discount: 0.99
+  soft_target_tau: 5.0e-3
+  target_update_period: 1
+  policy_lr: 3.0e-4
+  qf_lr: 3.0e-4
+  use_automatic_entropy_tuning: false
+  fixed_entropy_coefficient: 0.02 
+  reward_scale: 1
+  
+# evaluation
+eval_experiment_folder: "hallway_2023_03_07_05_16_46_0000--s-1" 
+eval_checkpoint_file: "itr_250.pkl"
+num_eval_episodes: 50
+stocastic_eval: true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
