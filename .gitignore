@@ -2,9 +2,11 @@ ssac.egg-info
 .DS_Store
 .history
 .vscode
+__pycache__
 data
 wandb
 runs
 plots
 tensorboard
 evaluation
+
